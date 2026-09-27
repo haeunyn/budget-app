@@ -6,7 +6,7 @@
 ## 실행 방법
 
 ```bash
-# 파이썬 3.10 이상 (3.9 에서도 동작하도록 from __future__ import annotations 사용)
+# Python 3.12.14 에서 개발/검증 (3.9 에서도 동작하도록 from __future__ import annotations 사용)
 cd budget-app
 python -m budget_app --help          # 전체 명령 보기
 python -m budget_app add             # 첫 거래 추가 (대화형)
@@ -159,10 +159,11 @@ budget-app/
 
 | 방식 | 시간 | 최대 메모리 |
 | --- | --- | --- |
-| 스트리밍 + `heapq.nlargest(3)` (이 프로그램) | 1.37초 | **0.06 MB** |
-| 전체를 리스트로 올린 뒤 정렬 | 1.62초 | 70.76 MB |
+| 스트리밍 + `heapq.nlargest(3)` (이 프로그램) | 1.29초 | **0.05 MB** |
+| 전체를 리스트로 올린 뒤 정렬 | 1.48초 | 60.08 MB |
 
-같은 결과를 내면서 메모리는 약 1,140배 적게 씁니다.
+같은 결과를 내면서 메모리는 약 1,145배 적게 씁니다.
+(Python 3.12.14, Apple Silicon 기준 측정)
 
 ### 2. 원자적 교체 — 중간에 죽어도 데이터가 깨지지 않음
 
@@ -234,3 +235,9 @@ $ python -m budget_app delete --id TX-999999; echo $?
 - 옵션 표기는 `--` 로 통일
 - 스택트레이스 출력 금지, 오류 종료 시 exit code ≠ 0
 - 모듈 10개로 분리 (요구: 3개 이상), 클래스 10개 이상 (요구: 2개 이상)
+
+## 개발 환경
+
+- Python **3.12.14** (Apple Silicon, macOS)
+- 외부 패키지 없음 — `pip install` 불필요
+- 소스는 `from __future__ import annotations` 를 써서 Python 3.9 에서도 실행됩니다
