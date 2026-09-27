@@ -1,0 +1,6 @@
+date,type,category,amount,memo,tags
+2026-09-05,expense,food,8500,아침 샌드위치,meal
+2026-09-06,expense,transport,1400,지하철,commute
+2026-09-07,income,etc,50000,중고거래 판매,
+2026-09-08,expense,food,12000,점심 김치찌개,"meal,lunch"
+2026-09-09,expense,rent,500000,9월 월세,fixed

@@ -1,0 +1,19 @@
+# 실행하면 생기는 데이터 (개인 가계부 내역이므로 저장소에 올리지 않는다)
+data/
+*.log
+
+# 백업 파일
+backup/
+*.bak
+
+# 내보낸 CSV
+export*.csv
+
+# macOS
+.DS_Store
+
+# 파이썬
+__pycache__/
+*.py[cod]
+.venv/
+venv/
